@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import MediaPlayer 
 
 class PlaySoundsViewController: UIViewController {
     
@@ -17,11 +18,22 @@ class PlaySoundsViewController: UIViewController {
     var audioEngine:AVAudioEngine!
     var audioFile:AVAudioFile!
     
+    //@IBOutlet weak var myVolumeViewParentView: UIView!
+    
     @IBOutlet weak var stopButton: UIButton!
     
+    @IBOutlet weak var myVolumeViewParentView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       // myVolumeViewParentView.backgroundColor = UIColor(white: 1, alpha: 0.5)
+//        var wrapperView = UIView(frame: CGRectMake(30, 200, 260, 20))
+//        var volumeView = MPVolumeView(frame: wrapperView.bounds)
+//        myVolumeViewParentView = MPVolumeView(frame: wrapperView.bounds)
+//        myVolumeViewParentView.addSubview(volumeView)
+    
+        
         
         stopButton.enabled = false
         //get handle on audio file
@@ -48,6 +60,13 @@ class PlaySoundsViewController: UIViewController {
         audioPlayer.currentTime = 0.0
         audioPlayer.play()
         stopButton.enabled = true
+        
+        var wrapperView = UIView(frame: CGRectMake(30, 200, 260, 20))
+        self.view.backgroundColor = UIColor.clearColor()
+        self.view.addSubview(wrapperView)
+        
+        var volumeView = MPVolumeView(frame: wrapperView.bounds)
+        wrapperView.addSubview(volumeView)
         
     }
     
