@@ -45,11 +45,11 @@ class PlaySoundsViewController: UIViewController {
 //        }
         
         
-        audioPlayer = AVAudioPlayer(contentsOfURL: receivedAudio.filePathUrl, error: nil)
+        audioPlayer = AVAudioPlayer(contentsOfURL: receivedAudio.filePath, error: nil)
         audioPlayer.enableRate = true
         
          audioEngine = AVAudioEngine()
-        audioFile = AVAudioFile(forReading: receivedAudio.filePathUrl, error: nil)
+        audioFile = AVAudioFile(forReading: receivedAudio.filePath, error: nil)
         
             }
     
