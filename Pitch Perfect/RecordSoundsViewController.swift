@@ -23,6 +23,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        recordingMessage.text = "Tap to Record"
+        
     
         
     }
@@ -40,7 +42,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     @IBAction func recordAudio(sender: UIButton) {
         
         recordButton.enabled = false
-        recordingMessage.text = "recording now..."
+        recordingMessage.text = "Now Recording"
         recordingMessage.hidden = false
         println("in recordAudio")
         stopButton.hidden = false
@@ -98,7 +100,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         
         //recordingMessage.hidden = true
         stopButton.hidden = true
-        recordingMessage.text = "you stopped recording"
+        recordingMessage.text = "Tap to Record"
         recordButton.enabled = true
     }
 }

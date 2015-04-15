@@ -24,6 +24,9 @@ class PlaySoundsViewController: UIViewController {
     
     @IBOutlet weak var myVolumeViewParentView: UIView!
     
+    @IBOutlet weak var volumeControlView: UIView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,42 +39,48 @@ class PlaySoundsViewController: UIViewController {
         
         
         stopButton.enabled = false
-        //get handle on audio file
-//        if var filePath = NSBundle.mainBundle().pathForResource("movie_quote", ofType: "mp3"){
-//            var filePathUrl = NSURL.fileURLWithPath(filePath)
-//            
-//        }else {
-//            println("error retrieving file path")
-//        }
-        
-        
         audioPlayer = AVAudioPlayer(contentsOfURL: receivedAudio.filePath, error: nil)
         audioPlayer.enableRate = true
         
          audioEngine = AVAudioEngine()
         audioFile = AVAudioFile(forReading: receivedAudio.filePath, error: nil)
         
+        self.view.addSubview(volumeControlView)
+   
+        
+  var wrapperView = UIView(frame: CGRectMake(70, 550, 260, 20))
+    //self.view.backgroundColor = UIColor.clearColor()
+   volumeControlView.backgroundColor = UIColor.clearColor()
+    //   self.view.addSubview(wrapperView)
+      volumeControlView.addSubview(wrapperView)
+        
+    var volumeView = MPVolumeView(frame: wrapperView.bounds)
+    
+        
+       wrapperView.addSubview(volumeView)
+      
+ 
+        
             }
     
     
     @IBAction func playSlowAudio(sender: UIButton) {
+        
         audioPlayer.stop()
+        audioEngine.stop()
+        audioEngine.reset()
         audioPlayer.rate = 0.5
         audioPlayer.currentTime = 0.0
         audioPlayer.play()
         stopButton.enabled = true
         
-        var wrapperView = UIView(frame: CGRectMake(30, 200, 260, 20))
-        self.view.backgroundColor = UIColor.clearColor()
-        self.view.addSubview(wrapperView)
-        
-        var volumeView = MPVolumeView(frame: wrapperView.bounds)
-        wrapperView.addSubview(volumeView)
         
     }
     
     @IBAction func playFastAudio(sender: UIButton) {
         audioPlayer.stop()
+        audioEngine.stop()
+        audioEngine.reset()
         audioPlayer.rate = 1.5
         audioPlayer.currentTime = 0.0
         audioPlayer.play()
