@@ -16,6 +16,7 @@
 		2146367B1AD9E3CC00E73EDA /* sasha.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2146367A1AD9E3CC00E73EDA /* sasha.mp3 */; };
 		2146367D1AD9EC5A00E73EDA /* movie_quote.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2146367C1AD9EC5A00E73EDA /* movie_quote.mp3 */; };
 		218004401AE2E6CE00E5B680 /* AudioSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2180043F1AE2E6CE00E5B680 /* AudioSettingsViewController.swift */; };
+		218004421AE38F9B00E5B680 /* patternizeimg.svg in Resources */ = {isa = PBXBuildFile; fileRef = 218004411AE38F9B00E5B680 /* patternizeimg.svg */; };
 		21F708CE1ADA35DF00D52918 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 214636801ADA24B600E73EDA /* Storyboard.storyboard */; };
 		21F708D01ADA3CBB00D52918 /* RecordedAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F708CF1ADA3CBB00D52918 /* RecordedAudio.swift */; };
 /* End PBXBuildFile section */
@@ -45,6 +46,7 @@
 		2146367C1AD9EC5A00E73EDA /* movie_quote.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = movie_quote.mp3; sourceTree = "<group>"; };
 		214636801ADA24B600E73EDA /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Storyboard.storyboard; path = "Pitch Perfect/Storyboard.storyboard"; sourceTree = "<group>"; };
 		2180043F1AE2E6CE00E5B680 /* AudioSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioSettingsViewController.swift; sourceTree = "<group>"; };
+		218004411AE38F9B00E5B680 /* patternizeimg.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = patternizeimg.svg; sourceTree = "<group>"; };
 		21F708CF1ADA3CBB00D52918 /* RecordedAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordedAudio.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +96,7 @@
 				21F708CF1ADA3CBB00D52918 /* RecordedAudio.swift */,
 				214636781AD9D7AD00E73EDA /* PlaySoundsViewController.swift */,
 				2146365F1AD9869A00E73EDA /* Images.xcassets */,
+				218004411AE38F9B00E5B680 /* patternizeimg.svg */,
 				214636611AD9869A00E73EDA /* LaunchScreen.xib */,
 				214636561AD9869A00E73EDA /* Supporting Files */,
 			);
@@ -211,6 +214,7 @@
 				21F708CE1ADA35DF00D52918 /* Storyboard.storyboard in Resources */,
 				2146367D1AD9EC5A00E73EDA /* movie_quote.mp3 in Resources */,
 				214636601AD9869A00E73EDA /* Images.xcassets in Resources */,
+				218004421AE38F9B00E5B680 /* patternizeimg.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

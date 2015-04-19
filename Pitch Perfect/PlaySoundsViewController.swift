@@ -12,6 +12,7 @@ import MediaPlayer
 
 class PlaySoundsViewController: UIViewController {
     
+    var unitReverb = AVAudioUnitReverb()
     var audioPlayer:AVAudioPlayer!
     var receivedAudio:RecordedAudio!
     
@@ -54,8 +55,8 @@ class PlaySoundsViewController: UIViewController {
         
         audioPlayer.play()
         audioPlayer.stop()
-        audioEngine.play()
         audioEngine.stop()
+        
         
         
      //   self.view.addSubview(volumeControlView)
@@ -76,6 +77,60 @@ class PlaySoundsViewController: UIViewController {
         
             }
     
+    @IBAction func playDistortionAudio(sender: AnyObject) {
+        
+        audioPlayer.stop()
+        audioEngine.stop()
+        audioEngine.reset()
+        stopButton.enabled = true
+        
+        var audioPlayerNode = AVAudioPlayerNode()
+        audioEngine.attachNode(audioPlayerNode)
+        
+        var changeDistortionEffect = AVAudioUnitDistortion()
+        changeDistortionEffect.loadFactoryPreset(AVAudioUnitDistortionPreset.MultiDecimated4)
+        changeDistortionEffect.wetDryMix = 60
+        
+        audioEngine.attachNode(changeDistortionEffect)
+        
+        audioEngine.connect(audioPlayerNode, to: changeDistortionEffect, format: nil)
+        audioEngine.connect(changeDistortionEffect, to: audioEngine.outputNode, format: nil)
+        
+        audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
+        
+        audioEngine.startAndReturnError(nil)
+        
+        audioPlayerNode.play()
+        
+        
+    }
+    
+    @IBAction func playReverbAudio(sender: AnyObject) {
+        
+        audioPlayer.stop()
+        audioEngine.stop()
+        audioEngine.reset()
+        stopButton.enabled = true
+        
+        var audioPlayerNode = AVAudioPlayerNode()
+        audioEngine.attachNode(audioPlayerNode)
+        
+        var changeReverbEffect = AVAudioUnitReverb()
+        changeReverbEffect.loadFactoryPreset(AVAudioUnitReverbPreset.Cathedral)
+        changeReverbEffect.wetDryMix = 60
+        
+        audioEngine.attachNode(changeReverbEffect)
+        
+        audioEngine.connect(audioPlayerNode, to: changeReverbEffect, format: nil)
+        audioEngine.connect(changeReverbEffect, to: audioEngine.outputNode, format: nil)
+        
+        audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
+        
+        audioEngine.startAndReturnError(nil)
+        
+        audioPlayerNode.play()
+
+    }
     
     @IBAction func playSlowAudio(sender: UIButton) {
         
@@ -114,6 +169,8 @@ class PlaySoundsViewController: UIViewController {
     @IBAction func playDarthVaderAudio(sender: UIButton) {
         playAudioWithVariablePitch(-1000)
     }
+    
+    
     
     func playAudioWithVariablePitch(pitch: Float) {
         audioPlayer.stop()

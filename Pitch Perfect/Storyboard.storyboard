@@ -127,13 +127,6 @@
                                     <action selector="playSlowAudio:" destination="hZG-2v-iU4" eventType="touchUpInside" id="gXQ-gu-o40"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rDo-DN-TYD">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                </variation>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPz-1o-HAx">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" image="stop">
@@ -146,6 +139,31 @@
                                     <action selector="stopPlayingAudio:" destination="hZG-2v-iU4" eventType="touchUpInside" id="yHr-hy-rNg"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rDo-DN-TYD">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                </variation>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbV-Bu-UmX">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Reverb">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playReverbAudio:" destination="hZG-2v-iU4" eventType="touchUpInside" id="wMb-8h-bbA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKr-eI-aCO">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Distortion">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playDistortionAudio:" destination="hZG-2v-iU4" eventType="touchUpInside" id="nMd-Yu-4T2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.40000000596046448" green="0.80000001192092896" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -153,11 +171,16 @@
                             <constraint firstAttribute="centerX" secondItem="oPz-1o-HAx" secondAttribute="centerX" id="AR4-jq-hAf"/>
                             <constraint firstItem="5EQ-Zg-7cu" firstAttribute="top" secondItem="YTh-S5-raI" secondAttribute="bottom" constant="22" id="DgC-f1-jFu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zzb-z8-gtB" secondAttribute="trailing" constant="13" id="Epn-aN-1I4"/>
+                            <constraint firstItem="lKr-eI-aCO" firstAttribute="leading" secondItem="3tK-YN-p55" secondAttribute="trailing" constant="44" id="Frk-ee-Qmu"/>
+                            <constraint firstItem="oPz-1o-HAx" firstAttribute="top" secondItem="gbV-Bu-UmX" secondAttribute="bottom" constant="115" id="RAj-32-Pu6"/>
                             <constraint firstItem="zzb-z8-gtB" firstAttribute="top" secondItem="YTh-S5-raI" secondAttribute="bottom" constant="22" id="YNU-0V-uZ5"/>
+                            <constraint firstItem="gbV-Bu-UmX" firstAttribute="leading" secondItem="rfj-Xs-q20" secondAttribute="leadingMargin" constant="153" id="axj-My-Mok"/>
                             <constraint firstAttribute="trailingMargin" secondItem="u7Z-nX-ZcA" secondAttribute="trailing" constant="13" id="bzL-EH-pAH"/>
                             <constraint firstItem="3tK-YN-p55" firstAttribute="top" secondItem="5EQ-Zg-7cu" secondAttribute="bottom" constant="54" id="dcO-qZ-W6j"/>
                             <constraint firstItem="3tK-YN-p55" firstAttribute="leading" secondItem="rfj-Xs-q20" secondAttribute="leadingMargin" id="lRc-Sw-JFL"/>
+                            <constraint firstItem="lKr-eI-aCO" firstAttribute="top" secondItem="gbV-Bu-UmX" secondAttribute="bottom" constant="21" id="nfl-Xz-ofa"/>
                             <constraint firstItem="u7Z-nX-ZcA" firstAttribute="top" secondItem="zzb-z8-gtB" secondAttribute="bottom" constant="54" id="oMd-0s-RUC"/>
+                            <constraint firstItem="oPz-1o-HAx" firstAttribute="top" secondItem="lKr-eI-aCO" secondAttribute="bottom" constant="64" id="rWt-Dn-QMx"/>
                             <constraint firstItem="5EQ-Zg-7cu" firstAttribute="leading" secondItem="rfj-Xs-q20" secondAttribute="leadingMargin" id="zZe-sZ-MfL"/>
                         </constraints>
                         <variation key="default">
@@ -166,19 +189,26 @@
                                 <exclude reference="u7Z-nX-ZcA"/>
                                 <exclude reference="3tK-YN-p55"/>
                                 <exclude reference="5EQ-Zg-7cu"/>
-                                <exclude reference="rDo-DN-TYD"/>
                                 <exclude reference="oPz-1o-HAx"/>
+                                <exclude reference="rDo-DN-TYD"/>
+                                <exclude reference="gbV-Bu-UmX"/>
+                                <exclude reference="lKr-eI-aCO"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="DgC-f1-jFu"/>
                                 <exclude reference="zZe-sZ-MfL"/>
                                 <exclude reference="dcO-qZ-W6j"/>
                                 <exclude reference="lRc-Sw-JFL"/>
+                                <exclude reference="axj-My-Mok"/>
                                 <exclude reference="Epn-aN-1I4"/>
                                 <exclude reference="YNU-0V-uZ5"/>
+                                <exclude reference="Frk-ee-Qmu"/>
+                                <exclude reference="nfl-Xz-ofa"/>
                                 <exclude reference="bzL-EH-pAH"/>
                                 <exclude reference="oMd-0s-RUC"/>
                                 <exclude reference="AR4-jq-hAf"/>
+                                <exclude reference="RAj-32-Pu6"/>
+                                <exclude reference="rWt-Dn-QMx"/>
                                 <exclude reference="6XC-eS-N6F"/>
                             </mask>
                         </variation>
@@ -188,19 +218,26 @@
                                 <include reference="u7Z-nX-ZcA"/>
                                 <include reference="3tK-YN-p55"/>
                                 <include reference="5EQ-Zg-7cu"/>
-                                <include reference="rDo-DN-TYD"/>
                                 <include reference="oPz-1o-HAx"/>
+                                <include reference="rDo-DN-TYD"/>
+                                <include reference="gbV-Bu-UmX"/>
+                                <include reference="lKr-eI-aCO"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="DgC-f1-jFu"/>
                                 <include reference="zZe-sZ-MfL"/>
                                 <include reference="dcO-qZ-W6j"/>
                                 <include reference="lRc-Sw-JFL"/>
+                                <include reference="axj-My-Mok"/>
                                 <include reference="Epn-aN-1I4"/>
                                 <include reference="YNU-0V-uZ5"/>
+                                <include reference="Frk-ee-Qmu"/>
+                                <include reference="nfl-Xz-ofa"/>
                                 <include reference="bzL-EH-pAH"/>
                                 <include reference="oMd-0s-RUC"/>
                                 <include reference="AR4-jq-hAf"/>
+                                <include reference="RAj-32-Pu6"/>
+                                <include reference="rWt-Dn-QMx"/>
                                 <include reference="6XC-eS-N6F"/>
                             </mask>
                         </variation>
