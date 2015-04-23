@@ -19,24 +19,13 @@ class PlaySoundsViewController: UIViewController {
     var audioEngine:AVAudioEngine!
     var audioFile:AVAudioFile!
     
-    //@IBOutlet weak var myVolumeViewParentView: UIView!
-    
     @IBOutlet weak var stopButton: UIButton!
-    
- //  @IBOutlet weak var myVolumeViewParentView: UIView!
     
     @IBOutlet weak var volumeControlView: UIView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       //myVolumeViewParentView.backgroundColor = UIColor(white: 1, alpha: 0.5)
-  //     var wrapperView = UIView(frame: CGRectMake(30, 200, 260, 20))
-    //    var volumeView = MPVolumeView(frame: wrapperView.bounds)
-  // myVolumeViewParentView = MPVolumeView(frame: wrapperView.bounds)
-     //   myVolumeViewParentView.addSubview(volumeView)
-    
         
         
         stopButton.enabled = false
@@ -47,7 +36,7 @@ class PlaySoundsViewController: UIViewController {
         audioFile = AVAudioFile(forReading: receivedAudio.filePath, error: nil)
         
         var wrapperView = UIView(frame: CGRectMake(20, 500, 260, 20))
-        self.view.backgroundColor = UIColor.lightGrayColor()
+        self.view.backgroundColor = UIColor.orangeColor()
         self.view.addSubview(wrapperView)
         
         var volumeView = MPVolumeView(frame: wrapperView.bounds)
@@ -57,22 +46,6 @@ class PlaySoundsViewController: UIViewController {
         audioPlayer.stop()
         audioEngine.stop()
         
-        
-        
-     //   self.view.addSubview(volumeControlView)
-   
-        
-  //var wrapperView = UIView(frame: CGRectMake(70, 600, 260, 20))
-    //self.view.backgroundColor = UIColor.clearColor()
-  // volumeControlView.backgroundColor = UIColor.clearColor()
-    //   self.view.addSubview(wrapperView)
-     // volumeControlView.addSubview(wrapperView)
-        
-  //  var volumeView = MPVolumeView(frame: wrapperView.bounds)
-    
-        
-      // wrapperView.addSubview(volumeView)
-      
  
         
             }
@@ -141,15 +114,6 @@ class PlaySoundsViewController: UIViewController {
         audioPlayer.currentTime = 0.0
         audioPlayer.play()
         stopButton.enabled = true
-        
-        var wrapperView = UIView(frame: CGRectMake(20, 500, 260, 20))
-        self.view.backgroundColor = UIColor.lightGrayColor()
-        self.view.addSubview(wrapperView)
-        
-        var volumeView = MPVolumeView(frame: wrapperView.bounds)
-        wrapperView.addSubview(volumeView)
-        
-        
     }
     
     @IBAction func playFastAudio(sender: UIButton) {
