@@ -4,7 +4,7 @@
 //
 //  Created by Michael Droz on 4/18/15.
 //  Copyright (c) 2015 Benefakter Apps. All rights reserved.
-//
+//  GitHub is cool
 
 import UIKit
 import AVFoundation
